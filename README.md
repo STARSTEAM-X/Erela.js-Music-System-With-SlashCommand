@@ -1,5 +1,7 @@
 ## Install
 ```
+npm install
+or
 npm install ascii-table@0.0.9
 npm install chalk@2.4.2
 npm install date-and-time@2.4.3
