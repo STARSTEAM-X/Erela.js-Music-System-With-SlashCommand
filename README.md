@@ -16,7 +16,7 @@ npm install erela.js-filter@0.2.3
 ## Setup
 ```
 Add Data TOKEN,MONGO_DB,CLIENT_ID,GUILD_ID IN .env file
-IF you not use My lavalink Setting
+If You Not Use My Lavalink Setting
     Change Lavalink_Host,Lavalink_Password,Lavalink_Port in config.json
 ```
 
