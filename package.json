@@ -1,0 +1,29 @@
+{
+  "name": "discordjs-v14.8",
+  "version": "1.0.0",
+  "description": "Commands, Events, Permissions and Cooldown Handlers for Discord.js v14 bot ~ Made by Lynx.devv#0531 || Erela.js Music SlashCommand System By STARSTEAM-X#0761 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Lynx.devv#0531 || STARSTEAM_X",
+  "license": "ISC",
+  "devDependencies": {
+    "node": "^16.14.0"
+  },
+  "dependencies": {
+    "@discordjs/rest": "^0.4.1",
+    "ascii-table": "^0.0.9",
+    "chalk": "^2.4.2",
+    "date-and-time": "^2.4.3",
+    "discord-api-types": "^0.30.0",
+    "discord.js": "^14.8.0",
+    "dotenv": "^16.0.3",
+    "erela.js": "^2.4.0",
+    "erela.js-filter": "^0.2.3",
+    "install": "^0.13.0",
+    "mongoose": "^6.10.4",
+    "ms": "^2.1.3"
+  }
+}
