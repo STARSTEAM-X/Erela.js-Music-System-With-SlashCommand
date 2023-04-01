@@ -16,19 +16,7 @@ const {
 
 client.on("guildCreate", async guild => {
 
-
     const GuildData = guild
-
-    const rest = new REST({
-        version: "10"
-    }).setToken(process.env.TOKEN);
-    await rest.put(
-        GuildData.id ?
-        Routes.applicationGuildCommands(process.env.CLIENT_ID, GuildData.id) :
-        Routes.applicationCommands(process.env.CLIENT_ID), {
-            body: client.slashCommands
-        },
-    );
 
     const users = await MyModelX.findOne({
         guildid: GuildData.id

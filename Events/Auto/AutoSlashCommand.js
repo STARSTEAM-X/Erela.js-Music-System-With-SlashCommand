@@ -12,16 +12,30 @@ const { REST } = require("@discordjs/rest")
 
 client.on("ready", async () => {
 
+    const rest = new REST({
+        version: "10"
+    }).setToken(process.env.TOKEN)
+
+    rest.put(Routes.applicationCommands(process.env.CLIENT_ID), { body: [] })
+        .then(async () => {
+            console.log("Clear Command")
+            await rest.put(
+                Routes.applicationCommands(process.env.CLIENT_ID), {
+                body: client.slashCommands
+            }).then(async () => {
+                console.log("Add Command")
+            })
+        })
+
     let loop = await client.guilds.cache.size
     var data = await client.guilds.cache
-
 
     var list = []
     let X = 0
 
-    if( loop === 1) {
+    if (loop === 1) {
         X = 0
-    }else{
+    } else {
         X = 1
     }
     for (X; X < loop; X++) {
@@ -32,17 +46,6 @@ client.on("ready", async () => {
 
     for (let i = 0; i < list.length; i++) {
         const GuildData = list[i]
-
-        const rest = new REST({
-            version: "10"
-        }).setToken(process.env.TOKEN);
-        await rest.put(
-            GuildData.id ?
-            Routes.applicationGuildCommands(process.env.CLIENT_ID, GuildData.id) :
-            Routes.applicationCommands(process.env.CLIENT_ID), {
-                body: client.slashCommands
-            },
-        );
 
         const users = await MyModelX.findOne({
             guildid: GuildData.id
@@ -96,5 +99,4 @@ client.on("ready", async () => {
             }).then(() => console.log(chalk.green(`${GuildData.name} : Updated`)));
         }
     }
-
 })
